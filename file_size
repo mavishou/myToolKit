@@ -1,0 +1,25 @@
+#!/usr/bin/env python2.7
+
+'''This script is used to sort the human read output of du --max-depth=1.'''
+
+import subprocess
+
+# get the right order
+raw = subprocess.Popen('du --max-depth=1 | sort -rn', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+outOrder = []
+for line in raw.stdout.readlines():
+	line = line.strip('\n')
+	outOrder.append(line.split('\t')[1])
+
+# get the human read result
+human = subprocess.Popen('du -h --max-depth=1 | sort -rn', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+dHuman = {}
+for line in human.stdout.readlines():
+	line = line.strip('\n')
+	lLine = line.split('\t')
+	dHuman[lLine[1]] = lLine[0]
+
+# output
+for out in outOrder:
+	outLine = '\t'.join([out, dHuman[out]])
+	print outLine
