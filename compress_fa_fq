@@ -1,0 +1,12 @@
+#!/bin/bash
+
+time (now_date=`date +%y%m%d`
+echo "Following files will be compressed:"
+for item in `find . -type f | grep -E "\.fastq$|\.fq$|\.fa$"`;do
+	if [ ! -e ${item}.gz ];then
+		echo $item
+		gzip $item
+	fi
+done
+echo
+echo "Done!") 2>&1 | tee compress_fa_fq_${now_date}.log
