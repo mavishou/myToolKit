@@ -8,8 +8,8 @@ import sys
 
 def processGTFAnno(anno):
 	dAnnos = {}
-	annos = anno.split('; ')
-	annos = [a.strip() for a in annos]
+	annos = anno.split(';')
+	annos = [a.strip() for a in annos if a != '' and a != ' ']
 	for a in annos:
 		lA = a.split(' ')
 		if len(lA) > 2:
