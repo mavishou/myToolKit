@@ -3,7 +3,7 @@
 '''Check whether a GTF file is well sorted by gene_id and transcript_id'''
 
 import sys
-import modify_gtf as gtf
+import gtf_util as gtf
 from collections import defaultdict
 
 ddGene = defaultdict(int)

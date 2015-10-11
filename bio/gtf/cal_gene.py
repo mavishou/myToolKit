@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*
 
 '''
-This script is used to get the entire transcript annotation from the V4expCaculate_combined_houm.gtf file
+This script is used to get the entire gene annotation from trans.gtf
 '''
 
-import modify_gtf as gtf
+import gtf_util as gtf
 import sys
 # import pdb
 
