@@ -15,7 +15,7 @@ def usage():
 
 fastaFile = ''
 num = 10
-opts, args = getopt.getopt(sys.argv[1:], 'i:n:h:')
+opts, args = getopt.getopt(sys.argv[1:], 'i:n:h')
 for op, value in opts:
 	if op == '-i':
 		fastaFile = value
