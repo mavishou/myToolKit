@@ -33,7 +33,7 @@ curGeneId = ''
 for line in sys.stdin.readlines():
 	li = line.rstrip('\n').split('\t')
 	# pdb.set_trace()
-	dAnnos = gtf.processAnnotation(li[8])
+	dAnnos = gtf.processGTFAnno(li[8])
 	transId = dAnnos['transcript_id']
 	geneId = dAnnos['gene_id']
 

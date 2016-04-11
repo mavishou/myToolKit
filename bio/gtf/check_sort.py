@@ -15,7 +15,7 @@ okGene = 1
 
 for line in sys.stdin.readlines():
 	li = line.rstrip('\n').split('\t')
-	dAnnos = gtf.processAnnotation(li[8])
+	dAnnos = gtf.processGTFAnno(li[8])
 	lineTransId = dAnnos['transcript_id']
 	lineGeneId = dAnnos['gene_id']
 	

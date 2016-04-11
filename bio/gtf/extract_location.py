@@ -4,7 +4,7 @@ extract locations of transcripts from a gtf file
 '''
 
 import sys
-from gtf_util import processAnnotation
+from gtf_util import processGTFAnno as processAnnotation
 import numpy as np
 
 # flncrnaGTF = open('annolnc_lncRNA_v1_exon.gtf')

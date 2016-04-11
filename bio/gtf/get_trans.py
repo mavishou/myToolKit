@@ -4,7 +4,7 @@ Get trans lines of each gtf file and simplify the 9th col
 '''
 
 import sys
-from gtf_util import processAnnotation
+from gtf_util import processGTFAnno as processAnnotation
 
 for line in sys.stdin.readlines():
 	line = line.rstrip('\n')
