@@ -23,5 +23,7 @@ def processGTFAnno(anno):
 
 def get_simple_anno(full_anno):
     d_anno = processGTFAnno(full_anno)
-    simple_anno = 'gene_id "{}"; transcript_id "{}"; '.format(d_anno['gene_id'], d_anno['transcript_id'])
+    simple_anno = 'gene_id "{}"; '.format(d_anno['gene_id'])
+    if 'transcript_id' in simple_anno:
+        simple_anno += 'transcript_id "{}"; '.format(d_anno['transcript_id'])
     return simple_anno
