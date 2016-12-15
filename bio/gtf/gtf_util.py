@@ -20,3 +20,8 @@ def processGTFAnno(anno):
         dAnnos[lA[0]] = lA[1].strip('"')
     return (dAnnos)
 
+
+def get_simple_anno(full_anno):
+    d_anno = processGTFAnno(full_anno)
+    simple_anno = 'gene_id "{}"; transcript_id "{}"; '.format(d_anno['gene_id'], d_anno['transcript_id'])
+    return simple_anno
