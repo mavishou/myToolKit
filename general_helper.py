@@ -1,10 +1,10 @@
 import os
 import sys
 import json
-import logging
 import subprocess
 from collections import OrderedDict
 from copy import copy
+from myToolKit.logging_config import *
 
 
 def line_to_list(line):
@@ -37,6 +37,11 @@ def list_to_file(li, output_file):
 def prepare_dir(d):
     if not os.path.exists(d):
         os.makedirs(d)
+
+
+def remove_a_file(f):
+    if os.path.exists(f):
+        os.remove(f)
 
 
 def exit_with_run_info(error_reason='', exit_code=1):
